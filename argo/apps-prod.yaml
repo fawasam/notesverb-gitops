@@ -1,0 +1,113 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: microservices-prod
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/YOUR_ORG/notesverb-gitops.git
+    targetRevision: HEAD
+    path: argo/prod
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: api-gateway-prod
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/YOUR_ORG/notesverb-gitops.git
+    targetRevision: HEAD
+    path: services/api-gateway/overlays/prod
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: api-gateway-prod
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: auth-service-prod
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/YOUR_ORG/notesverb-gitops.git
+    targetRevision: HEAD
+    path: services/auth-service/overlays/prod
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: auth-service-prod
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: user-service-prod
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/YOUR_ORG/notesverb-gitops.git
+    targetRevision: HEAD
+    path: services/user-service/overlays/prod
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: user-service-prod
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: notes-service-prod
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/YOUR_ORG/notesverb-gitops.git
+    targetRevision: HEAD
+    path: services/notes-service/overlays/prod
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: notes-service-prod
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: tags-service-prod
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/YOUR_ORG/notesverb-gitops.git
+    targetRevision: HEAD
+    path: services/tags-service/overlays/prod
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: tags-service-prod
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false

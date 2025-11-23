@@ -1,0 +1,113 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: microservices-staging
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/YOUR_ORG/notesverb-gitops.git
+    targetRevision: HEAD
+    path: argo/staging
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: api-gateway-staging
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/YOUR_ORG/notesverb-gitops.git
+    targetRevision: HEAD
+    path: services/api-gateway/overlays/staging
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: api-gateway-staging
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: auth-service-staging
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/YOUR_ORG/notesverb-gitops.git
+    targetRevision: HEAD
+    path: services/auth-service/overlays/staging
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: auth-service-staging
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: user-service-staging
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/YOUR_ORG/notesverb-gitops.git
+    targetRevision: HEAD
+    path: services/user-service/overlays/staging
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: user-service-staging
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: notes-service-staging
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/YOUR_ORG/notesverb-gitops.git
+    targetRevision: HEAD
+    path: services/notes-service/overlays/staging
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: notes-service-staging
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: tags-service-staging
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/YOUR_ORG/notesverb-gitops.git
+    targetRevision: HEAD
+    path: services/tags-service/overlays/staging
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: tags-service-staging
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
