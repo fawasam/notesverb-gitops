@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/YOUR_ORG/notesverb-gitops.git
+    repoURL: https://github.com/fawasam/notesverb-gitops.git
     targetRevision: HEAD
     path: argo/dev
   destination:
@@ -25,7 +25,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/YOUR_ORG/notesverb-gitops.git
+    repoURL: https://github.com/fawasam/notesverb-gitops.git
     targetRevision: HEAD
     path: services/api-gateway/overlays/dev
   destination:
@@ -44,7 +44,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/YOUR_ORG/notesverb-gitops.git
+    repoURL: https://github.com/fawasam/notesverb-gitops.git
     targetRevision: HEAD
     path: services/auth-service/overlays/dev
   destination:
@@ -63,7 +63,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/YOUR_ORG/notesverb-gitops.git
+    repoURL: https://github.com/fawasam/notesverb-gitops.git
     targetRevision: HEAD
     path: services/user-service/overlays/dev
   destination:
@@ -82,7 +82,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/YOUR_ORG/notesverb-gitops.git
+    repoURL: https://github.com/fawasam/notesverb-gitops.git
     targetRevision: HEAD
     path: services/notes-service/overlays/dev
   destination:
@@ -101,7 +101,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/YOUR_ORG/notesverb-gitops.git
+    repoURL: https://github.com/fawasam/notesverb-gitops.git
     targetRevision: HEAD
     path: services/tags-service/overlays/dev
   destination:
