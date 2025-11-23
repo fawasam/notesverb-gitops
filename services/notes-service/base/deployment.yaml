@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: notes-service
-        image: notes-service:latest
+        image: docker.io/fawaswebcastle/notes-service:latest
         ports:
         - containerPort: 3003
         env:

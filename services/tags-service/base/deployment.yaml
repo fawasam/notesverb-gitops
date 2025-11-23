@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: tags-service
-        image: tags-service:latest
+        image: docker.io/fawaswebcastle/tags-service:latest
         ports:
         - containerPort: 3004
         env:

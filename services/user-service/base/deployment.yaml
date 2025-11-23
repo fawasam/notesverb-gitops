@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: user-service
-        image: user-service:latest
+        image: docker.io/fawaswebcastle/user-service:latest
         ports:
         - containerPort: 3002
         env:

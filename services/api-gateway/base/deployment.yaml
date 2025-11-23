@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: api-gateway
-        image: api-gateway:latest
+        image: docker.io/fawaswebcastle/api-gateway:latest
         ports:
         - containerPort: 8080
         env:
