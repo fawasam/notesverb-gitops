@@ -3,7 +3,7 @@ bases:
 
 images:
   - name: docker.io/fawaswebcastle/api-gateway
-    newTag: tagname
+    newTag: latest
 
 patchesStrategicMerge:
   - replica-patch.yaml

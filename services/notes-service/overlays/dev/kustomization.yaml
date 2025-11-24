@@ -3,7 +3,7 @@ bases:
 
 images:
   - name: docker.io/fawaswebcastle/notes-service
-    newTag: dev-latest
+    newTag: latest
 
 patchesStrategicMerge:
   - replica-patch.yaml
